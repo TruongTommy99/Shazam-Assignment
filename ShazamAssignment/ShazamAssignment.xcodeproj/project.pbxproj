@@ -11,6 +11,11 @@
 		654A0BF2297DDDEC00A664D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A0BF1297DDDEC00A664D6 /* ContentView.swift */; };
 		654A0BF4297DDDEC00A664D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654A0BF3297DDDEC00A664D6 /* Assets.xcassets */; };
 		654A0BF7297DDDEC00A664D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654A0BF6297DDDEC00A664D6 /* Preview Assets.xcassets */; };
+		654B0C232980C1320019C1EA /* ShazamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C222980C1320019C1EA /* ShazamViewModel.swift */; };
+		654B0C252980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C242980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift */; };
+		654B0C292980C4770019C1EA /* MusicInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C282980C4770019C1EA /* MusicInformationView.swift */; };
+		654B0C2B2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C2A2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift */; };
+		654B0C2D2981596C0019C1EA /* ShazamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C2C2981596C0019C1EA /* ShazamButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,13 @@
 		654A0BF1297DDDEC00A664D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		654A0BF3297DDDEC00A664D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654A0BF6297DDDEC00A664D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		654B0C222980C1320019C1EA /* ShazamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamViewModel.swift; sourceTree = "<group>"; };
+		654B0C242980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShazamViewModel + ShazamDelegate.swift"; sourceTree = "<group>"; };
+		654B0C262980C44C0019C1EA /* ShazamAssignment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShazamAssignment.entitlements; sourceTree = "<group>"; };
+		654B0C272980C45D0019C1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		654B0C282980C4770019C1EA /* MusicInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInformationView.swift; sourceTree = "<group>"; };
+		654B0C2A2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShazamViewModel + AudioProcessing.swift"; sourceTree = "<group>"; };
+		654B0C2C2981596C0019C1EA /* ShazamButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,11 @@
 		654A0BEE297DDDEC00A664D6 /* ShazamAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				654B0C272980C45D0019C1EA /* Info.plist */,
+				654B0C262980C44C0019C1EA /* ShazamAssignment.entitlements */,
 				654A0BEF297DDDEC00A664D6 /* ShazamAssignmentApp.swift */,
-				654A0BF1297DDDEC00A664D6 /* ContentView.swift */,
+				654B0C212980C1000019C1EA /* Views */,
+				654B0C202980C0F20019C1EA /* ViewModel */,
 				654A0BF3297DDDEC00A664D6 /* Assets.xcassets */,
 				654A0BF5297DDDEC00A664D6 /* Preview Content */,
 			);
@@ -65,6 +80,26 @@
 				654A0BF6297DDDEC00A664D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		654B0C202980C0F20019C1EA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				654B0C222980C1320019C1EA /* ShazamViewModel.swift */,
+				654B0C242980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift */,
+				654B0C2A2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		654B0C212980C1000019C1EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				654A0BF1297DDDEC00A664D6 /* ContentView.swift */,
+				654B0C282980C4770019C1EA /* MusicInformationView.swift */,
+				654B0C2C2981596C0019C1EA /* ShazamButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +173,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				654A0BF2297DDDEC00A664D6 /* ContentView.swift in Sources */,
+				654B0C252980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift in Sources */,
+				654B0C292980C4770019C1EA /* MusicInformationView.swift in Sources */,
+				654B0C232980C1320019C1EA /* ShazamViewModel.swift in Sources */,
+				654B0C2B2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift in Sources */,
 				654A0BF0297DDDEC00A664D6 /* ShazamAssignmentApp.swift in Sources */,
+				654B0C2D2981596C0019C1EA /* ShazamButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,12 +304,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShazamAssignment/ShazamAssignment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShazamAssignment/Preview Content\"";
 				DEVELOPMENT_TEAM = 44N856UZ6R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShazamAssignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -280,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tommy.ShazamAssignment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tommy.shazamapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -293,12 +335,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShazamAssignment/ShazamAssignment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShazamAssignment/Preview Content\"";
 				DEVELOPMENT_TEAM = 44N856UZ6R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShazamAssignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tommy.ShazamAssignment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tommy.shazamapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
