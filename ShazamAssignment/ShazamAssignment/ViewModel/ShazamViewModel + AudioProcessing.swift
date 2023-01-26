@@ -18,31 +18,20 @@ extension ShazamViewModel {
         audioSession.requestRecordPermission { [weak self] success in
             guard success, self == self else { return }
         }
-
         try audioSession.setCategory(.record)
-
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        
     }
     
     func startRecording() throws {
-        
         engine.prepare()
-        
         try engine.start()
-        
         isRecordingSound = true
-        
     }
     
     func stopRecording() throws {
-        
         engine.stop()
-        
         engine.inputNode.removeTap(onBus: .zero)
-        
         isRecordingSound = false
-        
     }
     
 }

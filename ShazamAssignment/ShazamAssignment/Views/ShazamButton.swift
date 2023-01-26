@@ -8,34 +8,55 @@
 import SwiftUI
 
 struct ShazamButton: View {
-    
-    @ObservedObject var shazamViewModel : ShazamViewModel
-    
-    @State var size : Double = 60.0
+    @ObservedObject var shazamVM: ShazamViewModel
     
     var body: some View {
-        
-        ZStack {
-            
+        VStack {
             Button {
-                shazamViewModel.shazamButton()
+                shazamVM.shazamButtonPress()
             } label: {
-                Image("shazamIcon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:size, height: size)
-                
+                if shazamVM.isRecordingSound {
+                    ShazamButtonPulsing()
+                }
+                else {
+                    ShazamButtonStill()
+                }
             }
-            .scaleEffect(shazamViewModel.isRecordingSound ? 1.0 : 0.8)
-            .animation(.easeInOut)
-            
         }
-        
+    }
+}
+
+struct ShazamButtonPulsing: View {
+    @State private var pulse: CGFloat = 1
+    var body: some View {
+        Image("shazamKit")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(.blue)
+            .scaleEffect(pulse)
+            .shadow(color: .blue, radius: 10)
+            .onAppear{
+                withAnimation(.easeInOut.repeatForever(autoreverses: true)) {
+                    pulse = 1.25 * pulse
+                }
+            }
+            .frame(width: 200, height: 200)
+    }
+}
+
+struct ShazamButtonStill: View {
+    var body: some View {
+        Image("shazamKit")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .foregroundColor(.red)
+            .shadow(color: .blue, radius: 10)
+            .frame(width: 200, height: 200)
     }
 }
 
 struct ShazamButton_Previews: PreviewProvider {
     static var previews: some View {
-        ShazamButton(shazamViewModel: ShazamViewModel())
+        ShazamButton(shazamVM: ShazamViewModel())
     }
 }

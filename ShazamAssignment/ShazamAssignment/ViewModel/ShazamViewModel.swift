@@ -9,8 +9,9 @@ import ShazamKit
 import SwiftUI
 
 class ShazamViewModel : NSObject, ObservableObject {
-    
     @Published var mediaItems : [SHMediaItem] = []
+    
+    @Published var latestMediaItem : SHMediaItem = SHMediaItem(properties: [:])
     
     @Published var isRecordingSound : Bool = false
     
@@ -19,14 +20,8 @@ class ShazamViewModel : NSObject, ObservableObject {
     let engine = AVAudioEngine()
     
     override init() {
-
       super.init()
-        
       session.delegate = self
     }
-    
-    
-    
-    
     
 }

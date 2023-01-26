@@ -16,6 +16,7 @@
 		654B0C292980C4770019C1EA /* MusicInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C282980C4770019C1EA /* MusicInformationView.swift */; };
 		654B0C2B2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C2A2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift */; };
 		654B0C2D2981596C0019C1EA /* ShazamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654B0C2C2981596C0019C1EA /* ShazamButton.swift */; };
+		65A82DC42981B83D0047AFEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A82DC32981B83D0047AFEE /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		654B0C282980C4770019C1EA /* MusicInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInformationView.swift; sourceTree = "<group>"; };
 		654B0C2A2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShazamViewModel + AudioProcessing.swift"; sourceTree = "<group>"; };
 		654B0C2C2981596C0019C1EA /* ShazamButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamButton.swift; sourceTree = "<group>"; };
+		65A82DC32981B83D0047AFEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				654B0C272980C45D0019C1EA /* Info.plist */,
 				654B0C262980C44C0019C1EA /* ShazamAssignment.entitlements */,
 				654A0BEF297DDDEC00A664D6 /* ShazamAssignmentApp.swift */,
+				65A82DC22981AE530047AFEE /* Extensions */,
 				654B0C212980C1000019C1EA /* Views */,
 				654B0C202980C0F20019C1EA /* ViewModel */,
 				654A0BF3297DDDEC00A664D6 /* Assets.xcassets */,
@@ -100,6 +103,14 @@
 				654B0C2C2981596C0019C1EA /* ShazamButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		65A82DC22981AE530047AFEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65A82DC32981B83D0047AFEE /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 				654A0BF2297DDDEC00A664D6 /* ContentView.swift in Sources */,
 				654B0C252980C2140019C1EA /* ShazamViewModel + ShazamDelegate.swift in Sources */,
 				654B0C292980C4770019C1EA /* MusicInformationView.swift in Sources */,
+				65A82DC42981B83D0047AFEE /* Extensions.swift in Sources */,
 				654B0C232980C1320019C1EA /* ShazamViewModel.swift in Sources */,
 				654B0C2B2980D7B10019C1EA /* ShazamViewModel + AudioProcessing.swift in Sources */,
 				654A0BF0297DDDEC00A664D6 /* ShazamAssignmentApp.swift in Sources */,

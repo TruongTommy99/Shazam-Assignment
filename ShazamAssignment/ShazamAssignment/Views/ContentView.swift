@@ -6,29 +6,36 @@
 //
 
 import SwiftUI
+import ShazamKit
 
 struct ContentView: View {
     
     @StateObject var shazamViewModel = ShazamViewModel()
     
     var body: some View {
-        
-        VStack {
-            
-            ShazamButton(shazamViewModel: shazamViewModel)
-            
-            List  {
-                ForEach(shazamViewModel.mediaItems,id: \.self) { mediaItem in
-                    MusicInformationView(mediaItem: mediaItem)
-                        .frame(width: 100,height:100)
-                        .padding()
+            VStack {
+                Text( shazamViewModel.isRecordingSound ? "Tap to stop Shazaming" :
+                    "\(Image(systemName: "mic"))  Tap to Shazam!"
+                      )
+                    .bold()
+                    .font(.title)
+                    .foregroundColor(.blue)
+                    .animation(.easeInOut)
+                
+                ShazamButton(shazamVM: shazamViewModel)
+                
+                if (shazamViewModel.mediaItems.count > 0) {
+                    MusicInformationView(mediaItem: $shazamViewModel.latestMediaItem)
+                    .padding()
+                    .onAppear {
+                        withAnimation {
+                        }
+                    }
                 }
-                
-            
-                
+                if (shazamViewModel.mediaItems.count == 0) {
+                   Text("No music yet")
+                }
             }
-        }
-        .padding()
     }
 }
 
