@@ -10,6 +10,7 @@ import ShazamKit
 import SwiftUI
 
 extension ShazamViewModel : SHSessionDelegate {
+    
     public func shazamButtonPress() {
         do {
           if engine.isRunning {
@@ -36,28 +37,15 @@ extension ShazamViewModel : SHSessionDelegate {
                            format: recordingFormat) { [weak session] buffer, _ in
           
         session?.matchStreamingBuffer(buffer, at: nil)
-          
       }
     }
     
     func session(_ session: SHSession, didFind match: SHMatch) {
+        
         guard let mediaItem = match.mediaItems.first else { return }
-        
-        print("WE GET \(mediaItem.title!)")
 
-        /// Verify if the item is already in the list or not. If it already is, we simply ignore it.
-        if mediaItems.contains(where: { item in
-            item.shazamID == mediaItem.shazamID
-        }) {
-            /// Simply skip to the next step
-        }
-        
-        /// If it isn't, we can proceed to add in the array.
-        else {
             DispatchQueue.main.async {
-                self.mediaItems.append(mediaItem)
                 self.latestMediaItem = mediaItem
             }
-        }
     }
 }

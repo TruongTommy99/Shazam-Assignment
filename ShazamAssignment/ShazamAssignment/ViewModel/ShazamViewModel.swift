@@ -11,7 +11,7 @@ import SwiftUI
 class ShazamViewModel : NSObject, ObservableObject {
     @Published var mediaItems : [SHMediaItem] = []
     
-    @Published var latestMediaItem : SHMediaItem = SHMediaItem(properties: [:])
+    @Published var latestMediaItem : SHMediaItem?
     
     @Published var isRecordingSound : Bool = false
     

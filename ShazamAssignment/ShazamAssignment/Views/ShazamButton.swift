@@ -30,11 +30,8 @@ struct ShazamButtonPulsing: View {
     @State private var pulse: CGFloat = 1
     var body: some View {
         Image("shazamKit")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(.blue)
+            .shazamIconModifier()
             .scaleEffect(pulse)
-            .shadow(color: .blue, radius: 10)
             .onAppear{
                 withAnimation(.easeInOut.repeatForever(autoreverses: true)) {
                     pulse = 1.25 * pulse
@@ -47,10 +44,7 @@ struct ShazamButtonPulsing: View {
 struct ShazamButtonStill: View {
     var body: some View {
         Image("shazamKit")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .foregroundColor(.red)
-            .shadow(color: .blue, radius: 10)
+            .shazamIconModifier()
             .frame(width: 200, height: 200)
     }
 }

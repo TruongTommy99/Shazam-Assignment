@@ -14,26 +14,31 @@ struct ContentView: View {
     
     var body: some View {
             VStack {
-                Text( shazamViewModel.isRecordingSound ? "Tap to stop Shazaming" :
-                    "\(Image(systemName: "mic"))  Tap to Shazam!"
-                      )
-                    .bold()
-                    .font(.title)
-                    .foregroundColor(.blue)
-                    .animation(.easeInOut)
                 
-                ShazamButton(shazamVM: shazamViewModel)
-                
-                if (shazamViewModel.mediaItems.count > 0) {
+                if let _ = shazamViewModel.latestMediaItem{
                     MusicInformationView(mediaItem: $shazamViewModel.latestMediaItem)
                     .padding()
                     .onAppear {
-                        withAnimation {
+                        withAnimation() {
+                            
                         }
                     }
                 }
-                if (shazamViewModel.mediaItems.count == 0) {
-                   Text("No music yet")
+                
+                VStack {
+                    ShazamButton(shazamVM: shazamViewModel)
+                    
+                    Text( shazamViewModel.isRecordingSound ? "Tap to stop Shazaming" :
+                        "Tap to Shazam!")
+                        .bold()
+                        .font(.title)
+                        .foregroundColor(.blue)
+                        .animation(.easeInOut)
+                }
+                .onChange(of: shazamViewModel.latestMediaItem) { _ in
+                    withAnimation {
+                        
+                    }
                 }
             }
     }

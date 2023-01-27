@@ -10,13 +10,13 @@ import ShazamKit
 
 struct MusicInformationView: View {
     
-    @Binding var mediaItem: SHMediaItem
+    @Binding var mediaItem: SHMediaItem?
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading, spacing: 4.0) {
             
-            if let mediaItemUrl = mediaItem.artworkURL {
+            if let mediaItemUrl = mediaItem?.artworkURL {
                 AsyncImage(url: mediaItemUrl,
                            transaction: .init(animation: .default)) { phase in
                     phase.image?
@@ -24,19 +24,16 @@ struct MusicInformationView: View {
                         .scaledToFit()
                 }
                 
-                VStack(alignment: .leading, spacing: 4.0) {
-                    Text(mediaItem.title ?? "No song")
-                        .fontWeight(.bold)
-                        .font(.system(size: 36, weight: .heavy, design: .rounded))
+                Text(mediaItem?.title ?? "No title")
+                    .fontWeight(.bold)
+                    .font(.system(size: 28, weight: .heavy, design: .default))
                     
-                    Text(mediaItem.artist ?? "No artist")
-                        .fontWeight(.light)
-                        .font(.caption)
-                }
-                .foregroundColor(.black)
-                .multilineTextAlignment(.leading)
+                Text(mediaItem?.artist ?? "No artist")
+                    .fontWeight(.medium)
+                    .font(.body)
+                
             }
-            
+        
             else {
             }
         }
