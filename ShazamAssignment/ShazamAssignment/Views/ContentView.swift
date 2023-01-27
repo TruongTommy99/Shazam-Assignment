@@ -19,9 +19,7 @@ struct ContentView: View {
                     MusicInformationView(mediaItem: $shazamViewModel.latestMediaItem)
                     .padding()
                     .onAppear {
-                        withAnimation() {
-                            
-                        }
+                        withAnimation() {}
                     }
                 }
                 
@@ -36,9 +34,7 @@ struct ContentView: View {
                         .animation(.easeInOut)
                 }
                 .onChange(of: shazamViewModel.latestMediaItem) { _ in
-                    withAnimation {
-                        
-                    }
+                    withAnimation() {}
                 }
             }
     }

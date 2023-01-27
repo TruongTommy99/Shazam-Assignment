@@ -29,14 +29,11 @@ extension ShazamViewModel : SHSessionDelegate {
     
     private func generateSignature() {
       let inputNode = engine.inputNode
-        
       let recordingFormat = inputNode.outputFormat(forBus: .zero)
-      
       inputNode.installTap(onBus: .zero,
                            bufferSize: 1024,
-                           format: recordingFormat) { [weak session] buffer, _ in
-          
-        session?.matchStreamingBuffer(buffer, at: nil)
+                           format: recordingFormat) {  buffer, _ in
+          self.session.matchStreamingBuffer(buffer, at: nil)
       }
     }
     

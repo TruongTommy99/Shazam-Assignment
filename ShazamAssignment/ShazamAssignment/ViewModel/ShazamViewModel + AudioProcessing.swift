@@ -14,7 +14,6 @@ extension ShazamViewModel {
     func prepareAudioRecording() throws {
         
         let audioSession = AVAudioSession.sharedInstance()
-        
         audioSession.requestRecordPermission { [weak self] success in
             guard success, self == self else { return }
         }

@@ -9,8 +9,6 @@ import ShazamKit
 import SwiftUI
 
 class ShazamViewModel : NSObject, ObservableObject {
-    @Published var mediaItems : [SHMediaItem] = []
-    
     @Published var latestMediaItem : SHMediaItem?
     
     @Published var isRecordingSound : Bool = false
@@ -23,5 +21,5 @@ class ShazamViewModel : NSObject, ObservableObject {
       super.init()
       session.delegate = self
     }
-    
+
 }
